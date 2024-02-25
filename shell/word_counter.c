@@ -28,15 +28,3 @@ int word_counter(char *str)
 	}
 	return (nw);
 }
-
-/**
-*main -  control program execution
-*Return: Always 0
-**/
-
-int main(int ac, char **argv)
-{
-	(void) ac;
-	printf("Total Words: %d\n", word_counter(argv[1]));
-	return (0);
-}
