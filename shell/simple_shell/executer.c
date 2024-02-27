@@ -31,9 +31,11 @@ void executer(char **input_arr)
 	}
 }
 
+/*
 int main(void)
 {
-	char *str[] = {"/usr/bin/ls"};
+	char *str[] = {"/usr/bin/ls\n", NULL};
 	executer(str);
 	return (0);
 }
+*/

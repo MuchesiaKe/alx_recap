@@ -12,6 +12,8 @@ int main(void)
 	input = get_input();
 	input_arr = tokenizer(input);
 	executer(input_arr);
+	while(*input_arr)
+		printf("%s\n", *input_arr++);
 	free (input);
 	return (0);
 }
