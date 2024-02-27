@@ -7,11 +7,18 @@
 
 char *get_input(void)
 {
-	char *input;
+	char *input, *temp;
 	size_t size;
 
 	input = malloc(sizeof(char *));
 	printf("$ ");
 	getline(&input, &size, stdin);
+	temp = input;
+	while (*temp)
+	{
+		if (*temp == '\n')
+			*temp = '\0';
+		temp++;
+	}
 	return (input);
 }

@@ -14,7 +14,6 @@ char **tokenizer(char *str)
 	i = 0;
 	nw = word_counter(str);
 	nw++;
-	printf("nw: %d\n", nw);
 
 	token_arr = malloc(nw * sizeof(*token_arr));
 	if (token_arr == NULL)
