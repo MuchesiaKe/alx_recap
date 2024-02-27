@@ -25,29 +25,17 @@ char **tokenizer(char *str)
 		perror("token_arr malloc failed\n");
 		exit (1);
 	}
-	while (i <= nw)
-	{
-		printf("i: %d\n", i);
-		token_arr[i] = malloc(sizeof(*token_arr));
-		if (token_arr[i] == NULL)
-		{
-			perror("token_arr malloc failed");
-			exit (1);
-		}
-		i++;
-	}
 
 	i = 0;
 	token = strtok(str, " ");
-	while (i <= nw)
+	while (i < nw && token)
 	{
-		token_arr[i] = token;
-		printf("%s\n", token_arr[i]);
+		token_arr[i] = strdup(token);
 		token = strtok(NULL, " ");
 		i++;
 	}
-	token_arr[i] = '\0';
-	return (0);
+	token_arr[i] = NULL;
+	return (token_arr);
 }
 
 /**
@@ -58,9 +46,10 @@ char **tokenizer(char *str)
 int main(void)
 {
 	char **tokenized;
+	char str[] = "Hello world over there";
 
-	tokenized = tokenizer("Hello world over there");
-	while (tokenized)
-		printf("%s\n", *tokenized);
+	tokenized = tokenizer(str);
+	while (*tokenized)
+		printf("%s\n", *tokenized++);
 	return (0);
 }
