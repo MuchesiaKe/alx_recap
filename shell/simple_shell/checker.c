@@ -3,9 +3,10 @@
 /**
 *checker - checks if command is present in PATH
 *@input_arr: array of command and arguements
+*Return: full path of command
 **/
 
-void checker(char **input_arr)
+char  *checker(char **input_arr)
 {
 	char *path, *comm_path, *full_path;
 	struct stat st;
@@ -21,10 +22,9 @@ void checker(char **input_arr)
 		full_path = strcat(full_path, input_arr[0]);
 		if (stat(full_path, &st) == 0)
 		{
-			input_arr[0] = full_path;
-			executer(input_arr);
+			return (full_path);
 		}
 		comm_path = strtok(NULL, ":");
 	}
-	printf("Invalid command\n");
+	return (NULL);
 }
