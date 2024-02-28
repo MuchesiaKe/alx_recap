@@ -19,7 +19,7 @@ int word_counter(char *str)
 	{
 		if (*str == ' ' || *str == '\n' || *str == '\t')
 			state = OUT;
-		else if(state == OUT)
+		else if (state == OUT)
 		{
 			state = IN;
 			nw++;

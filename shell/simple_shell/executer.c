@@ -15,14 +15,14 @@ void executer(char **input_arr)
 	if (my_pid == -1)
 	{
 		perror("Error forking!\n");
-		exit (1);
+		exit(1);
 	}
-	else if(my_pid == 0)
+	else if (my_pid == 0)
 	{
-		if(execve(input_arr[0], input_arr, NULL) == -1)
+		if (execve(input_arr[0], input_arr, NULL) == -1)
 		{
 			perror("execve failed");
-			exit (1);
+			exit(1);
 		}
 	}
 	else
@@ -30,12 +30,3 @@ void executer(char **input_arr)
 		wait(&status);
 	}
 }
-
-/*
-int main(void)
-{
-	char *str[] = {"/usr/bin/ls\n", NULL};
-	executer(str);
-	return (0);
-}
-*/

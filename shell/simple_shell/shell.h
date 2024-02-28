@@ -13,4 +13,5 @@
 	char **tokenizer(char *input);
 	int word_counter(char *input);
 	void executer(char **input_arr);
+	void checker(char **input_arr);
 #endif

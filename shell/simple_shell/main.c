@@ -11,7 +11,7 @@ int main(void)
 
 	input = get_input();
 	input_arr = tokenizer(input);
-	executer(input_arr);
-	free (input);
+	checker(input_arr);
+	free(input);
 	return (0);
 }

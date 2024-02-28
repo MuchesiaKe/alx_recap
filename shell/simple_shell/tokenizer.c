@@ -19,7 +19,7 @@ char **tokenizer(char *str)
 	if (token_arr == NULL)
 	{
 		perror("token_arr malloc failed\n");
-		exit (1);
+		exit(1);
 	}
 
 	i = 0;
