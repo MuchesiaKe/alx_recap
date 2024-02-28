@@ -5,6 +5,9 @@
 	#include <string.h>
 	#include <unistd.h>
 	#include <sys/wait.h>
+	#include <sys/stat.h>
+
+	extern char **environ;
 
 	char *get_input(void);
 	char **tokenizer(char *input);
